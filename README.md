@@ -2,7 +2,7 @@
 
 An advanced, secure, and lightning-fast **Mega.nz** streaming client and decrypter natively built as a Kodi Video Addon.
 
-With `megastreamer`, you can access, stream, and automatically decrypt both **public Mega links** and your **private Mega Cloud Drive** files directly inside Kodi, without downloading them first.
+With `megastreamer`, you can access, stream, and automatically decrypt **Mega Cloud Drive** files directly inside Kodi, without downloading them first.
 
 ---
 
