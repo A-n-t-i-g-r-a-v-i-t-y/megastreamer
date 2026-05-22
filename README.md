@@ -25,7 +25,6 @@ The story behind megastreamer:
 *   **⚡ Connection Keep-Alive Engine:** Reuses open TCP/TLS sockets for incredibly snappy seeking (skipping forward/backward) and stutter-free streaming.
 *   **🔒 Transparent Credential Encryption:** Passwords stored in settings are automatically encrypted on-disk using military-grade **AES-CBC** (`crypto_utils.py`), ensuring your credentials are never exposed in plaintext.
 *   **💾 Persistent Session Caching:** Bypasses aggressive Mega anti-bot triggers and account lockdowns by securely caching active login sessions in a local `session.json` profile.
-*   **🛠️ Integrated Addon Remnants Manager:** Scan and recursively wipe orphaned, unregistered legacy addon directories (e.g. `script.megastream`, `script.megastream.old`) directly from the Kodi UI in one click.
 *   **🌐 Native Kodi Video Plugin:** Registered as a native `plugin.video.megastreamer`, enabling full integration with Kodi's Video Addon category and supporting standard Kodi GUI uninstallation.
 *   **🛡️ Bot Detection Avoidance:** Blends into standard web traffic using authentic Chrome browser agent signatures, Origin, and Referer headers.
 
