@@ -19,7 +19,7 @@ This repository offers both the base and the latest versions of the addon side-b
 
 The story behind megastreamer (v0.1):
 
-1. **Inspiration:** The addon is inspired by the work of **MrDini123** (`movieshark` / `megastream`).
+1. **Inspiration:** The addon is inspired by the work of **MrDini123** (`movieshark` / `megastream`). As Mega.nz is a very popular resource it has always bothered me, that there was no easy solution to import and/or stream files/folders on Mega.nz from within Kodi. It seems to have remained a sore spot for users worldwide.
 2. **Expanded Focus:** It has been enhanced so that it allows the user to browse and stream any media elements directly from their **private Mega account**.
 3. **Human & AI Hand-in-Hand (Antigravity):** The addon was created during a longer recovery/convalescence period as a fun "sandbox project" to explore the capabilities of **Antigravity** The effective "programming time" of v0.1 was about **1.5-2 hours**, v,0.2 took another 2 hours due to some technical hiccups, but for most parts was realized by Antigravity and **without any advanced programming experience** on my part, as the AI autonomously managed the complex implementation steps.
 4. **Hardened from Real-World Testing:** During development, early test versions repeatedly triggered automatic account lockdowns due to Mega.nz's aggressive bot-detection systems detecting "suspicious activity". These lessons have been incorporated directly into the hardening architecture of this final version (including intelligent AES-encrypted session caching and authentic browser spoofing), meaning this **no longer happens** in the release version.
