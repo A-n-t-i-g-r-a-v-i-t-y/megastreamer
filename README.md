@@ -1,6 +1,11 @@
-# 🚀 megastreamer (v0.1 & v0.2)
+# 🚀 meg·a·stream·er
+/ˈmɛɡəˌstriːmər/
 
-An advanced, secure, and lightning-fast **Mega.nz** streaming client and decrypter natively built as a Kodi Video Addon.
+noun
+
+1. Software & Tech. An advanced, highly optimized video add-on built natively for Kodi designed to stream, traverse, and automatically decrypt public shared folders and private files hosted on the Mega.nz cloud service in real-time, eliminating the need for local storage or pre-downloads.
+2. Usage. A tool that bypasses traditional cloud storage barriers, allowing instant playback and connection keep-alive optimizations.
+
 
 With `megastreamer`, you can access, stream, and automatically decrypt both **public Mega links** and your **private Mega Cloud Drive** files directly inside Kodi, without downloading them first.
 
