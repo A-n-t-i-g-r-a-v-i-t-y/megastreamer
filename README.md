@@ -15,7 +15,8 @@ With `megastreamer`, you can access, stream, and automatically decrypt both **pu
 
 This repository offers both the base and the latest versions of the addon side-by-side:
 
-*   **📁 [`plugin.video.megastreamer-0.2`](plugin.video.megastreamer-0.2)**: The active, latest **Version 0.2** of the addon. It features a complete multi-account manager, deep public shared folder traversal, batch file imports with custom CSV metadata, custom premium icons, and generic root/nested key decryption.
+*   **📁 [`plugin.video.megastreamer-0.3`](plugin.video.megastreamer-0.3)**: The active, latest **Version 0.3** featuring smart quota management, automatic Cloudflare proxy fallback, and enhanced stream stability.
+*   **📁 [`plugin.video.megastreamer-0.2`](plugin.video.megastreamer-0.2)**: The previous **Version 0.2** of the addon. It features a complete multi-account manager, deep public shared folder traversal, batch file imports with custom CSV metadata, custom premium icons, and generic root/nested key decryption.
 *   **📁 [`plugin.video.megastreamer-0.1`](plugin.video.megastreamer-0.1)**: The first **Version 0.1** of the addon, offering the baseline core client for private accounts.
 
 ---
@@ -34,6 +35,28 @@ The story behind megastreamer (v0.1):
 
 ---
 
+## 🚀 What's New in Version 0.3 (Changelog & Enhancements)
+
+Version 0.3 introduces advanced quota management, Cloudflare worker proxy optimizations, and improved playback stability.
+
+### 1. 📊 Smart Quota Management & Cloudflare Proxy
+*   **What it is:** The addon now tracks your cumulative data usage locally.
+*   **Why it matters:** It automatically reduces unnecessary Cloudflare Worker usage by only triggering the proxy once a 4.9 GB threshold is reached.
+
+### 2. 🔄 Automatic Fallback for Bandwidth Limits (HTTP 509)
+*   **What it is:** A robust fallback mechanism that seamlessly catches HTTP 509 (Bandwidth Limit Exceeded) errors.
+*   **Why it matters:** Ensures uninterrupted streaming by automatically switching to the proxy when your primary IP quota is exhausted.
+
+### 3. ⏱️ Smart Cooldown Management
+*   **What it is:** Implements a cooldown period to reset usage tracking effectively.
+*   **Why it matters:** Keeps your quota tracking accurate over time and optimizes when the proxy is utilized.
+
+### 4. 🛠️ Cloudflare Error 1027 Handling
+*   **What it is:** Added specific logic to properly handle Cloudflare Error 1027.
+*   **Why it matters:** Increases overall stream stability when interacting with the proxy.
+
+---
+
 ## 🔄 What's New in Version 0.2 (Changelog & Enhancements)
 
 Version 0.2 represents a leap forward in stability, navigation, cross-platform compatibility, and customizability over the initial release. The key differences and improvements are detailed below:
@@ -43,8 +66,8 @@ Version 0.2 represents a leap forward in stability, navigation, cross-platform c
 *   **Why it matters:** You can now configure multiple Mega accounts in the addon settings and seamlessly switch the active account. Assign distinct accounts for private cloud browsing versus public link streaming to manage bandwidth quotas dynamically.
 
 ### 2. 📂 Public Shared Folder Traversal & Key Decryption Overhaul
-*   **Resolved API Constraint:** 
-*   **Overhauled Decryption:**
+*   **Resolved API Constraint** 
+*   **Overhauled Decryption**
 
 ### 3. 📥 OS-Independent Batch Link Import (Custom CSV-style Metadata)
 *   **What it is:** The import interface was restructured to be fully platform-agnostic to ensure 100% compatibility across Android, Linux, Windows, macOS, and more.
@@ -80,9 +103,23 @@ Both versions of the addon share a core streaming architecture:
 
 ---
 
+## ☁️ Cloudflare Worker Setup (Proxy)
+
+To utilize the smart proxy feature, you can deploy your own free Cloudflare Worker.
+
+1. **Register/Login:** Create a free account or log in at the [Cloudflare Dashboard](https://dash.cloudflare.com/).
+2. **Create a Worker:** Navigate to **Workers & Pages** -> **Create application** -> **Create Worker**.
+3. **Name your Worker:** Give it a suitable name (e.g., `mega-proxy`) and click **Deploy**.
+4. **Edit the Code:** Click on **Edit code**. Clear the default code and paste the entire contents of the `worker.js` file into the editor.
+5. **Deploy:** Click **Save and deploy**.
+6. **Configure Addon:** Copy your generated Worker URL (e.g., `https://mega-proxy.<username>.workers.dev`) and paste it into the megastreamer addon settings in Kodi.
+
+---
+
 ## 🔧 Installation & Setup
 
 1.  Download or package the compiled ZIP file for your preferred version:
+    *   **`plugin.video.megastreamer_0.3.zip`** (Version 0.3)
     *   **`plugin.video.megastreamer_0.2.zip`** (Version 0.2)
     *   **`plugin.video.megastreamer_0.1.zip`** (Version 0.1)
 2.  Rename the file to `plugin.video.megastreamer.zip` 
