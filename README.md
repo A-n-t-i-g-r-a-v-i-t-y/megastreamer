@@ -47,11 +47,11 @@ Version 0.4 introduces native Google Drive integration with automated Loopback a
 *   **What it is:** Setting up Google Drive requires generating your own Google Cloud credentials (Client ID and Secret). Public shared keys are no longer supported.
 *   **Setup Notice:** This process requires a few initial steps outside Kodi (registering a project, configuring the OAuth screen under "Testing" status, adding your Gmail as a "Test User", and bypassing Google's app verification warning). Detailed step-by-step instructions are available in the [GoogleAuth_deutsch.md](GoogleAuth_deutsch.md) and [GoogleAuth_english.md](GoogleAuth_english.md) guides.
 
-### 🔄 5. Persistent Background Service Architecture & Absolute Imports
+### 🔄 4. Persistent Background Service Architecture & Absolute Imports
 *   **What it is:** Migrated the core streaming server from a blocking plugin script to a persistent `xbmc.service` running in the background. Structured with absolute path bootstrapping and absolute imports.
 *   **Why it matters:** Ensures lightning-fast folder navigation, lower playback start times, and eliminates Python standalone execution errors ("Streaming Service nicht aktiv") during Kodi startup.
 
-### 🔒 6. Force Cloudflare Worker Toggle (100% Anonymity/Privacy)
+### 🔒 5. Force Cloudflare Worker Toggle (100% Anonymity/Privacy)
 *   **What it is:** Added a toggle to route **all** Mega.nz traffic directly through a Cloudflare Worker, bypassing IP quota checks entirely. Includes automatic failsafe protection that refuses to fallback to your direct IP if the worker fails.
 *   **Why it matters:** Guarantees 100% traffic obfuscation and privacy from your ISP, ensuring your real IP address is never leaked.
 
