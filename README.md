@@ -10,10 +10,10 @@ With `megastreamer`, you can access, stream, and automatically decrypt both **pu
 
 This repository offers both the base and the latest versions of the addon side-by-side:
 
-*   **📁 [`plugin.video.megastreamer`](plugin.video.megastreamer)**: The active, latest **Version 0.4** of the addon. It features native **Google Drive Integration**, automated local Loopback OAuth 2.0 flow, secure client secret encryption, and a custom copyright-compliant brushed metal menu artwork.
-*   **📁 [`plugin.video.megastreamer-0.3`](plugin.video.megastreamer-0.3)**: The previous **Version 0.3** of the addon featuring smart quota management, automatic Cloudflare proxy fallback, and enhanced stream stability.
+*   **📁 [`plugin.video.megastreamer`](plugin.video.megastreamer_0.4)**: The active, latest **Version 0.4** of the addon. It features native **Google Drive Integration**, automated local Loopback OAuth 2.0 flow, secure client secret encryption, and a custom copyright-compliant brushed metal menu artwork.
+*   **📁 [`plugin.video.megastreamer-0.3`](plugin.video.megastreamer_0.3)**: The previous **Version 0.3** of the addon featuring smart quota management, automatic Cloudflare proxy fallback, and enhanced stream stability.
 *   **📁 [`plugin.video.megastreamer_0.2`](plugin.video.megastreamer_0.2)**: The previous **Version 0.2** of the addon featuring a complete multi-account manager, deep public shared folder traversal, batch file imports with custom CSV metadata, custom premium icons, and generic root/nested key decryption.
-*   **📁 [`plugin.video.megastreamer-0.1`](plugin.video.megastreamer-0.1)**: The first **Version 0.1** of the addon, offering the baseline core client for private accounts.
+*   **📁 [`plugin.video.megastreamer-0.1`](plugin.video.megastreamer_0.1)**: The first **Version 0.1** of the addon, offering the baseline core client for private accounts.
 
 ---
 
