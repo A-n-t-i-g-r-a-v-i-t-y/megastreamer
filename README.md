@@ -1,13 +1,8 @@
-# 🚀 meg·a·stream·er
-/ˈmɛɡəˌstriːmər/
+# 🚀 megastreamer (v0.1 to v0.4)
 
-noun
+An advanced, secure, and lightning-fast **Mega.nz** and **Google Drive** streaming client natively built as a Kodi Video Addon.
 
-1. Software & Tech. An advanced, highly optimized video add-on built natively for Kodi designed to stream, traverse, and automatically decrypt public shared folders and private files hosted on the Mega.nz cloud service in real-time, eliminating the need for local storage or pre-downloads.
-2. Usage. A tool that bypasses traditional cloud storage barriers, allowing instant playback and connection keep-alive optimizations.
-
-
-With `megastreamer`, you can access, stream, and automatically decrypt both **public Mega links** and your **private Mega Cloud Drive** files directly inside Kodi, without downloading them first.
+With `megastreamer`, you can access, stream, and automatically decrypt both **public Mega links** and your **private Mega and Google Drive cloud storage** directly inside Kodi, without downloading them first.
 
 ---
 
@@ -15,8 +10,9 @@ With `megastreamer`, you can access, stream, and automatically decrypt both **pu
 
 This repository offers both the base and the latest versions of the addon side-by-side:
 
-*   **📁 [`plugin.video.megastreamer-0.3`](plugin.video.megastreamer-0.3)**: The active, latest **Version 0.3** featuring smart quota management, automatic Cloudflare proxy fallback, and enhanced stream stability.
-*   **📁 [`plugin.video.megastreamer-0.2`](plugin.video.megastreamer-0.2)**: The previous **Version 0.2** of the addon. It features a complete multi-account manager, deep public shared folder traversal, batch file imports with custom CSV metadata, custom premium icons, and generic root/nested key decryption.
+*   **📁 [`plugin.video.megastreamer`](plugin.video.megastreamer)**: The active, latest **Version 0.4** of the addon. It features native **Google Drive Integration**, automated local Loopback OAuth 2.0 flow, secure client secret encryption, and a custom copyright-compliant brushed metal menu artwork.
+*   **📁 [`plugin.video.megastreamer-0.3`](plugin.video.megastreamer-0.3)**: The previous **Version 0.3** of the addon featuring smart quota management, automatic Cloudflare proxy fallback, and enhanced stream stability.
+*   **📁 [`plugin.video.megastreamer_0.2`](plugin.video.megastreamer_0.2)**: The previous **Version 0.2** of the addon featuring a complete multi-account manager, deep public shared folder traversal, batch file imports with custom CSV metadata, custom premium icons, and generic root/nested key decryption.
 *   **📁 [`plugin.video.megastreamer-0.1`](plugin.video.megastreamer-0.1)**: The first **Version 0.1** of the addon, offering the baseline core client for private accounts.
 
 ---
@@ -25,13 +21,55 @@ This repository offers both the base and the latest versions of the addon side-b
 
 The story behind megastreamer (v0.1):
 
-1. **Inspiration:** The addon is inspired by the work of **MrDini123** (`movieshark` / `megastream`). As Mega.nz is a very popular resource it has always bothered me, that there was no easy solution to import and/or stream files/folders on Mega.nz from within Kodi. It seems to have remained a sore spot for users worldwide.
+1. **Inspiration:** The addon is inspired by the work of **MrDini123** (`movieshark` / `megastream`).
 2. **Expanded Focus:** It has been enhanced so that it allows the user to browse and stream any media elements directly from their **private Mega account**.
 3. **Human & AI Hand-in-Hand (Antigravity):** The addon was created during a longer recovery/convalescence period as a fun "sandbox project" to explore the capabilities of **Antigravity** The effective "programming time" of v0.1 was about **1.5-2 hours**, v,0.2 took another 2 hours due to some technical hiccups, but for most parts was realized by Antigravity and **without any advanced programming experience** on my part, as the AI autonomously managed the complex implementation steps.
 4. **Hardened from Real-World Testing:** During development, early test versions repeatedly triggered automatic account lockdowns due to Mega.nz's aggressive bot-detection systems detecting "suspicious activity". These lessons have been incorporated directly into the hardening architecture of this final version (including intelligent AES-encrypted session caching and authentic browser spoofing), meaning this **no longer happens** in the release version.
 
 > [!WARNING]
 > **Disclaimer:** Use of this addon is entirely at your own risk. This project has no affiliation with Mega.nz (no endorsement) and is neither supported nor approved by Mega.nz.
+
+---
+
+## 🚀 What's New in Version 0.4 (Changelog & Enhancements)
+
+Version 0.4 introduces native Google Drive integration with automated Loopback authentication, a persistent background service architecture, hardened cross-platform configuration safety, custom menu artwork, and a dedicated setup workflow.
+
+### 1. 📂 Native Google Drive Integration
+*   **What it is:** MegaStreamer now natively supports browsing and streaming media directly from your personal Google Drive account.
+*   **Why it matters:** Access your entire Google Drive library directly within Kodi alongside your Mega cloud storage files.
+
+### 🔑 2. Automated Loopback OAuth 2.0 Flow & Manual Fallback
+*   **What it is:** Relies on a built-in background loopback server (`127.0.0.1:53682`) to automatically capture the Google authorization code, with a manual text input fallback if needed.
+*   **Why it matters:** Bypasses Google's strict blocks on TV/Limited-input devices by performing the login seamlessly inside your standard system web browser.
+
+### 🛡️ 3. Mandatory Custom Credentials & External Setup
+*   **What it is:** Setting up Google Drive requires generating your own Google Cloud credentials (Client ID and Secret). Public shared keys are no longer supported.
+*   **Setup Notice:** This process requires a few initial steps outside Kodi (registering a project, configuring the OAuth screen under "Testing" status, adding your Gmail as a "Test User", and bypassing Google's app verification warning). Detailed step-by-step instructions are available in the [GoogleAuth_deutsch.md](GoogleAuth_deutsch.md) and [GoogleAuth_english.md](GoogleAuth_english.md) guides.
+
+### 🎨 4. Custom Brushed Aluminum play-icon
+*   **What it is:** A premium custom menu icon (`my_gdrive_cloud.png`) depicting a segmented three-color play button (Google Drive colors) centered on a sleek brushed aluminum plate.
+*   **Why it matters:** Avoids direct trademark infringement while keeping a beautiful, premium visual identity consistent with `my_mega_cloud.png`.
+
+### 🔄 5. Persistent Background Service Architecture & Absolute Imports
+*   **What it is:** Migrated the core streaming server from a blocking plugin script to a persistent `xbmc.service` running in the background. Structured with absolute path bootstrapping and absolute imports.
+*   **Why it matters:** Ensures lightning-fast folder navigation, lower playback start times, and eliminates Python standalone execution errors ("Streaming Service nicht aktiv") during Kodi startup.
+
+### 🎥 6. Dradis-Analog Playback Resolution
+*   **What it is:** Replaced old player-polling loops with native `xbmcplugin.setResolvedUrl()` mapping.
+*   **Why it matters:** Ensures perfect compatibility with Kodi's native media engine, allowing instant, stutter-free playback starts.
+
+### 🛡️ 7. Linux Flatpak Hardening & Setting Retrieval Fallbacks
+*   **What it is:** Wrapped all settings calls (`getSettingInt`, `getSettingBool`) in robust `try-except` blocks to catch generic exceptions and cast values manually.
+*   **Why it matters:** Prevents `TypeError: Invalid setting type` crashes found on Flatpak, Linux, and custom Kodi builds, ensuring absolute cross-platform stability.
+
+### ⚙️ 8. Recovered Localhost, Port Settings & Variable Buffer Caching
+*   **What it is:** Restored Localhost, Minimum Port, and Maximum Port configuration controls under "General" settings by re-implementing mandatory `<control>` tags. Added a custom **Buffer Cache Size** slider.
+*   **Why it matters:** Restores full configuration control. The cache slider dynamically generates custom `advancedsettings.xml` configurations up to 500MB with a detailed memory allocation guide ([recommended_cache_values.md](recommended_cache_values.md)).
+
+### 🔒 9. Force Cloudflare Worker Toggle (100% Anonymity/Privacy)
+*   **What it is:** Added a toggle to route **all** Mega.nz traffic directly through a Cloudflare Worker, bypassing IP quota checks entirely. Includes automatic failsafe protection that refuses to fallback to your direct IP if the worker fails.
+*   **Why it matters:** Guarantees 100% traffic obfuscation and privacy from your ISP, ensuring your real IP address is never leaked.
 
 ---
 
@@ -66,8 +104,8 @@ Version 0.2 represents a leap forward in stability, navigation, cross-platform c
 *   **Why it matters:** You can now configure multiple Mega accounts in the addon settings and seamlessly switch the active account. Assign distinct accounts for private cloud browsing versus public link streaming to manage bandwidth quotas dynamically.
 
 ### 2. 📂 Public Shared Folder Traversal & Key Decryption Overhaul
-*   **Resolved API Constraint** 
-*   **Overhauled Decryption**
+*   **Resolved API Constraint:** 
+*   **Overhauled Decryption:**
 
 ### 3. 📥 OS-Independent Batch Link Import (Custom CSV-style Metadata)
 *   **What it is:** The import interface was restructured to be fully platform-agnostic to ensure 100% compatibility across Android, Linux, Windows, macOS, and more.
@@ -103,22 +141,10 @@ Both versions of the addon share a core streaming architecture:
 
 ---
 
-## ☁️ Cloudflare Worker Setup (Proxy)
-
-To utilize the smart proxy feature, you can deploy your own free Cloudflare Worker.
-
-1. **Register/Login:** Create a free account or log in at the [Cloudflare Dashboard](https://dash.cloudflare.com/).
-2. **Create a Worker:** Navigate to **Workers & Pages** -> **Create application** -> **Create Worker**.
-3. **Name your Worker:** Give it a suitable name (e.g., `mega-proxy`) and click **Deploy**.
-4. **Edit the Code:** Click on **Edit code**. Clear the default code and paste the entire contents of the `worker.js` file into the editor.
-5. **Deploy:** Click **Save and deploy**.
-6. **Configure Addon:** Copy your generated Worker URL (e.g., `https://mega-proxy.<username>.workers.dev`) and paste it into the megastreamer addon settings in Kodi.
-
----
-
 ## 🔧 Installation & Setup
 
 1.  Download or package the compiled ZIP file for your preferred version:
+    *   **`plugin.video.megastreamer_0.4.zip`** (Version 0.4 - Latest Release)
     *   **`plugin.video.megastreamer_0.3.zip`** (Version 0.3)
     *   **`plugin.video.megastreamer_0.2.zip`** (Version 0.2)
     *   **`plugin.video.megastreamer_0.1.zip`** (Version 0.1)
@@ -126,6 +152,16 @@ To utilize the smart proxy feature, you can deploy your own free Cloudflare Work
 3. In Kodi, go to **Settings -> Add-ons -> Install from zip file** and select the desiredZIP file.
 4.  Right-click (or long-press) the **megastreamer** addon, choose **Settings (Einstellungen)**, and enter your Mega.nz E-Mail and Password.
 5.  Open the addon to access your private Cloud Drive, import batch links, or stream public files!
+
+---
+
+## ☕ Support the Project (Buy Me A Coffee)
+
+If you find `megastreamer` useful and want to support its continued development, feel free to buy me a coffee!
+
+[![Support on Buy Me A Coffee](coffee.png)](https://buymeacoffee.com/Anti.gravity)
+
+👉 **[Support this project on Buy Me A Coffee](https://buymeacoffee.com/Anti.gravity)**
 
 ---
 
@@ -141,8 +177,3 @@ This project is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 See [LICENSE.md](LICENSE.md) for the full license text.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## ☕ Support the Project (Buy Me A Coffee)
-If you find `megastreamer` useful and want to support its development, feel free to buy my human a coffee!
-
-👉 **[Support this project on Buy Me A Coffee](https://buymeacoffee.com/Anti.gravity)**
