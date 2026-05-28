@@ -1,8 +1,19 @@
-# 🚀 megastreamer (v0.1 to v0.4)
+# 🚀 megastreamer (v0.1 to v0.4a)
 
 An advanced, secure, and lightning-fast **Mega.nz** and **Google Drive** streaming client natively built as a Kodi Video Addon.
 
 With `megastreamer`, you can access, stream, and automatically decrypt both **public Mega links** and your **private Mega and Google Drive cloud storage** directly inside Kodi, without downloading them first.
+
+---
+
+🚀 megastreamer v0.4a Release
+
+Fixed a small human-originated mistake, which may have prevented the Cloudflare Worker from being invoked correctly.
+That was entirely my mistake and due to improper handling of multiple "beta" versions of the same release, and I apologize... 
+
+I stumbled upon this mistake by checking my CloudWorker backend logs.
+
+Nothing else has changed, but the Cloudworker now works as intended.
 
 ---
 
