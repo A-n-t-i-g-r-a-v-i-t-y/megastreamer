@@ -6,7 +6,8 @@ With `megastreamer`, you can access, stream, and automatically decrypt both **pu
 
 ---
 
-⚡ What’s New in Version 0.5 
+⚡ What’s New in Version 0.5
+
 Version 0.5 adds GoFile.io streaming support as well as the ability to browse and stream directly from your favorite Debrid services (Real-Debrid, Premiumize.me, AllDebrid, EasyDebrid, and Offcloud, tested only with Offcloud, but in principle it should work). 
 
 📂 1. Native GoFile.io Integration 
