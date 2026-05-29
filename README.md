@@ -22,8 +22,10 @@ GoFile Desalinator Companion and enter the new salt value in settings, which wil
 new update is published. 
 
 🧪 3. GoFile Desalinator Companion 
-Alongside the addon, we designed a local browser-based decryption app: Gofile Desalinator.html. * Native Browser
-Execution: Simply double-click the HTML page to run it locally in any web browser (Chrome, Opera, Firefox). * Drag-and
+Alongside the addon, we designed a local browser-based decryption app: Gofile Desalinator.html.
+* Native Browser
+Execution: Simply double-click the HTML page to run it locally in any web browser (Chrome, Opera, Firefox).
+* Drag-and
 Drop Parsing: Drop your local wt.js or wt.obf.js script onto the interface. These files are part of the files and folders
 saved when you open GoFile.io in your browser and choose to save the webpage (“Save As…”). 
 
