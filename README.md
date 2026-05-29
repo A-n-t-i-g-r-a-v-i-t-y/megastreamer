@@ -1,8 +1,30 @@
-# 🚀 megastreamer (v0.1 to v0.4a)
+# 🚀 megastreamer (v0.1 to v0.5)
 
 An advanced, secure, and lightning-fast **Mega.nz** and **Google Drive** streaming client natively built as a Kodi Video Addon.
 
 With `megastreamer`, you can access, stream, and automatically decrypt both **public Mega links** and your **private Mega and Google Drive cloud storage** directly inside Kodi, without downloading them first.
+
+---
+
+⚡ What’s New in Version 0.5 
+Version 0.5 adds GoFile.io streaming support as well as the ability to browse and stream directly from your favorite Debrid services (Real-Debrid, Premiumize.me, AllDebrid, EasyDebrid, and Offcloud, tested only with Offcloud, but in principle it should work). 
+
+📂 1. Native GoFile.io Integration 
+Browse and stream media directly from your GoFile.io cloud folders! MegaStreamer now parses folder contents, manages
+sessions, and plays back video files seamlessly in your Kodi interface.
+
+⚙️ 2. Manual Salt Override 
+The current salt value is hardcoded, but Gofile.io may change it at their own discretion some time in the future. If that
+happens and the current salt is no longer valid, streaming may fail. There are fallback routines in place to check if a new salt
+key is already published. In addition to these fallback routines, you can desalinate a local copy of GoFile.io yourself using our
+GoFile Desalinator Companion and enter the new salt value in settings, which will override the hardcoded salt value until a
+new update is published. 
+
+🧪 3. GoFile Desalinator Companion 
+Alongside the addon, we designed a local browser-based decryption app: Gofile Desalinator.html. * Native Browser
+Execution: Simply double-click the HTML page to run it locally in any web browser (Chrome, Opera, Firefox). * Drag-and
+Drop Parsing: Drop your local wt.js or wt.obf.js script onto the interface. These files are part of the files and folders
+saved when you open GoFile.io in your browser and choose to save the webpage (“Save As…”). 
 
 ---
 
